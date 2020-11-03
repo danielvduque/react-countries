@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles/Countries.css';
 import Navbar from './Navbar';
-import { Link } from 'react-router-dom';
+import Country from './Country';
 
 class Countries extends React.Component {
     state = {
@@ -33,14 +33,7 @@ class Countries extends React.Component {
                             {this.state.data.map(country => {
                                 return (
                                     <div className="col-3 mb-2" key={country.alpha2Code}>
-                                        <Link to={`/customers/${country.alpha2Code}`}>
-                                            <div className="card">
-                                                <img className="card-img-top country-img" src={country.flag} alt="Flag" />
-                                                <div className="card-body country-body">
-                                                    <h6 className="card-title">{country.name} - {country.alpha2Code}</h6>
-                                                </div>
-                                            </div>
-                                        </Link>
+                                        <Country country={country} />
                                     </div>
                                 )
                             })}
