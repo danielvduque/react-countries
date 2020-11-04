@@ -6,7 +6,7 @@ class Country extends React.Component {
         const { country } = this.props;
 
         return (
-            <Link to={`/customers/${country.alpha2Code}`}>
+            <Link to={`/country/${country.alpha2Code}`}>
                 <div className="card">
                     <img className="card-img-top country-img" src={country.flag} alt="Flag" />
                     <div className="card-body country-body">
