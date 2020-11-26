@@ -36,11 +36,16 @@
   background-color: #1C3643;
 }
 
-.Navbar > p {
+.Navbar > a {
   font-size: 2em;
   color: #FFFFFF;
   font-weight: 700;
   margin: 0.5rem 0;
+}
+
+.Navbar > a:hover {
+  text-decoration: none;
+  color: #8ca7b6;
 }
 
 @keyframes App-logo-spin {

@@ -1,7 +1,9 @@
 .country-img {
-    height: 16vh;
+    height: 14vh;
+    border-radius: 2em 2em 0 0 !important;
 }
 
-.country-body {
-    min-height: 6rem !important;
+.card {
+    border-radius: 2em !important;
+    min-width: 25vh;
 }

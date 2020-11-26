@@ -32,7 +32,7 @@ class Countries extends React.Component {
                         <div className="row">
                             {this.state.data.map(country => {
                                 return (
-                                    <div className="col-3 mb-2" key={country.alpha2Code}>
+                                    <div className="col-lg-3 col-md-3 col-sm-6 mb-2" key={country.alpha2Code}>
                                         <Country country={country} />
                                     </div>
                                 )
