@@ -5,6 +5,7 @@ import Country from './Country';
 
 class Countries extends React.Component {
     state = {
+        filter: '',
         data: []
     }
 
@@ -22,15 +23,27 @@ class Countries extends React.Component {
         })
     }
 
+    handleChange = (event) =>{
+        this.setState({filter: event.target.value});
+    }
+
     render() {
+        const { filter, data } = this.state;
+        const lowercasedFilter = filter.toLowerCase();
+        const filteredData = data.filter((country) => {
+            return country.name.toLowerCase().includes(lowercasedFilter);
+        })
+
         return (
             <React.Fragment>
                 <Navbar />
-
                 <div className="mt-2">
                     <div className="container">
+                        <p className="form-group">
+                            <input type="text" className="form-control" placeholder="Filtrar país por nombre" onChange={this.handleChange}/>
+                        </p>
                         <div className="row">
-                            {this.state.data.map(country => {
+                            {filteredData.map(country => {
                                 return (
                                     <div className="col-lg-3 col-md-3 col-sm-6 mb-2" key={country.alpha2Code}>
                                         <Country country={country} />

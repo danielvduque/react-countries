@@ -7,11 +7,11 @@ class Country extends React.Component {
 
         return (
             <Link to={`/country/${country.alpha2Code}`}>
-                <div className="card">
-                    <img className="card-img-top country-img" src={country.flag} alt="Flag" />
-                    <div className="card-body country-body">
-                        <h6 className="card-title">{country.name} - {country.alpha2Code}</h6>
-                    </div>
+                <div className="card content">
+                    <span className=""> 
+                        <img className="card-img-top country-img" src={country.flag} alt="Flag" />
+                        <h6 className="text-block">{country.name} - {country.alpha2Code}</h6>
+                    </span>
                 </div>
             </Link>
         )
