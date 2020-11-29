@@ -48,6 +48,12 @@
   color: #8ca7b6;
 }
 
+.map {
+  height: 500px !important;
+  position: relative;
+  width: 100%;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

@@ -1,9 +1,10 @@
 import React from 'react';
 import Navbar from './Navbar';
+import MapComponent from './Map';
 
 class CountryDetails extends React.Component {
     state = {
-        country: {borders:[], languages: [], currencies: []}
+        country: { borders: [], languages: [], currencies: [], latlng: [] }
     }
 
     componentDidMount() {
@@ -22,8 +23,15 @@ class CountryDetails extends React.Component {
         return (
             <div>
                 <Navbar />
-                <div className="container">
-                    <h1>{this.state.country.name} - {this.state.country.alpha3Code}</h1>
+                <div className="container"> 
+                    <h1 className="mb-4">{this.state.country.name} - {this.state.country.alpha3Code}</h1>
+
+                    <div className="row mb-4">
+                        <div className="map">
+                            <MapComponent lat={this.state.country.latlng[0]} lng={this.state.country.latlng[1]} />
+                        </div>
+                    </div>
+
                     <div className="row">
                         <div className="col">
                             <table className="table table-striped">
